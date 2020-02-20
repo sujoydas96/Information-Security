@@ -6,59 +6,61 @@ class Caesar:
 
     def alphabets(self,alphabet): #lookup table
         if alphabet == "a":
-            self.temp = "d"
-        if alphabet == "b":
-            self.temp = "e"
-        if alphabet == "c":
-            self.temp = "f"
-        if alphabet == "d":
-            self.temp = "g"
-        if alphabet == "e":
-            self.temp = "h"
-        if alphabet == "f":
-            self.temp = "i"
-        if alphabet == "g":
-            self.temp = "j"
-        if alphabet == "h":
-            self.temp = "k"
-        if alphabet == "i":
-            self.temp = "l"
-        if alphabet == "j":
-            self.temp = "m"
-        if alphabet == "k":
-            self.temp = "n"
-        if alphabet == "l":
-            self.temp = "o"
-        if alphabet == "m":
-            self.temp = "p"
-        if alphabet == "n":
-            self.temp = "q"
-        if alphabet == "o":
-            self.temp = "r"
-        if alphabet == "p":
-            self.temp = "s"
-        if alphabet == "q":
-            self.temp = "t"
-        if alphabet == "r":
-            self.temp = "u"
-        if alphabet == "s":
-            self.temp = "v"
-        if alphabet == "t":
-            self.temp = "w"
-        if alphabet == "u":
-            self.temp = "x"
-        if alphabet == "v":
-            self.temp = "y"
-        if alphabet == "w":
-            self.temp = "z"
-        if alphabet == "x":
-            self.temp = "a"
-        if alphabet == "y":
-            self.temp = "b"
-        if alphabet == "z":
-            self.temp = "c"
+            self.temp = "D"
+        elif alphabet == "b":
+            self.temp = "E"
+        elif alphabet == "c":
+            self.temp = "F"
+        elif alphabet == "d":
+            self.temp = "G"
+        elif alphabet == "e":
+            self.temp = "H"
+        elif alphabet == "f":
+            self.temp = "I"
+        elif alphabet == "g":
+            self.temp = "J"
+        elif alphabet == "h":
+            self.temp = "K"
+        elif alphabet == "i":
+            self.temp = "L"
+        elif alphabet == "j":
+            self.temp = "M"
+        elif alphabet == "k":
+            self.temp = "N"
+        elif alphabet == "l":
+            self.temp = "O"
+        elif alphabet == "m":
+            self.temp = "P"
+        elif alphabet == "n":
+            self.temp = "Q"
+        elif alphabet == "o":
+            self.temp = "R"
+        elif alphabet == "p":
+            self.temp = "S"
+        elif alphabet == "q":
+            self.temp = "T"
+        elif alphabet == "r":
+            self.temp = "U"
+        elif alphabet == "s":
+            self.temp = "V"
+        elif alphabet == "t":
+            self.temp = "W"
+        elif alphabet == "u":
+            self.temp = "X"
+        elif alphabet == "v":
+            self.temp = "Y"
+        elif alphabet == "w":
+            self.temp = "Z"
+        elif alphabet == "x":
+            self.temp = "A"
+        elif alphabet == "y":
+            self.temp = "B"
+        elif alphabet == "z":
+            self.temp = "C"
+        elif alphabet == " ":
+            self.temp = " "
         else:
-            pass
+            self.temp = ""
 
     def encrypt(self,message):
         self.message = message.lower()
