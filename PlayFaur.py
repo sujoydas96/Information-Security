@@ -124,12 +124,13 @@ class PlayFair:
                 cipher.append(self.arr[self.i][self.j])
                 cipher.append(self.arr[self.k][self.l])
 
-        return("".join(cipher))          #return a string not a list
+        return("".join(cipher))          
     
-    def decrypt(self,cipher):                            #not operational
+    def decryption(self,cipher):                            #not operational
         cipher = cipher.replace(" ","")
         cipher = cipher.lower()
         cipher = list(cipher)
+        cipher.reverse()
         self.i = 0
         self.j = 0
         self.k = 0
@@ -138,7 +139,51 @@ class PlayFair:
         letter = "0"
         message = list()
 
+        for num in range(int(len(cipher)/2)):
+            letter = cipher.pop()
 
+            for i in range(5):       #first alphabet
+                for j in range(5):
+                    if self.arr[i][j] == letter:
+                        self.i = i
+                        self.j = j
+                        break
+            
+            letter = cipher.pop()
+
+            for k in range(5):          #second alphabet
+                for l in range(5):
+                    if self.arr[k][l] == letter:
+                        self.k = k
+                        self.l = l
+                        break
+
+            if self.j == self.l and self.i != self.k:                   #same column
+                self.i -= 1
+                self.k -= 1
+                if self.i == -1:
+                    self.i += 5
+                elif self.k == -1:
+                    self.k += 5
+                message.append(self.arr[self.i][self.j])
+                message.append(self.arr[self.k][self.l])
+
+            elif self.i == self.k and self.j != self.l:                  #same row
+                self.j -= 1
+                self.l -= 1
+                if self.j == -1:
+                    self.j += 5
+                elif self.l == -1:
+                    self.l += 5
+                message.append(self.arr[self.i][self.j])
+                message.append(self.arr[self.k][self.l])
+
+            else:
+                temp = self.j
+                self.j = self.l
+                self.l = temp
+                message.append(self.arr[self.i][self.j])
+                message.append(self.arr[self.k][self.l])
+
+        return("".join(message))  
    
-instance = PlayFair("monarchy")
-print(instance.encryption("say your angels"))
